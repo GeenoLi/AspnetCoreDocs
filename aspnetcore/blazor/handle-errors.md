@@ -5,8 +5,8 @@ description: Discover how ASP.NET Core Blazor how Blazor manages unhandled excep
 monikerRange: '>= aspnetcore-3.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/29/2020
-no-loc: [Blazor, SignalR]
+ms.date: 04/23/2020
+no-loc: [Blazor, "Identity", "Let's Encrypt", Razor, SignalR]
 uid: blazor/handle-errors
 ---
 # Handle errors in ASP.NET Core Blazor apps
@@ -106,6 +106,8 @@ During development, Blazor usually sends the full details of exceptions to the b
 
 You must decide which incidents to log and the level of severity of logged incidents. Hostile users might be able to trigger errors deliberately. For example, don't log an incident from an error where an unknown `ProductId` is supplied in the URL of a component that displays product details. Not all errors should be treated as high-severity incidents for logging.
 
+For more information, see <xref:fundamentals/logging/index#create-logs-in-blazor>.
+
 ## Places where errors may occur
 
 Framework and app code may trigger unhandled exceptions in any of the following locations:
@@ -178,7 +180,7 @@ If user code doesn't trap and handle the exception, the framework logs the excep
 
 ### Component disposal
 
-A component may be removed from the UI, for example, because the user has navigated to another page. When a component that implements <xref:System.IDisposable?displayProperty=fullName> is removed from the UI, the framework calls the component's <xref:System.IDisposable.Dispose*> method.
+A component may be removed from the UI, for example, because the user has navigated to another page. When a component that implements <xref:System.IDisposable?displayProperty=fullName> is removed from the UI, the framework calls the component's <xref:System.IDisposable.Dispose%2A> method.
 
 If the component's `Dispose` method throws an unhandled exception, the exception is fatal to a Blazor Server circuit. If disposal logic may throw exceptions, the app should trap the exceptions using a [try-catch](/dotnet/csharp/language-reference/keywords/try-catch) statement with error handling and logging.
 

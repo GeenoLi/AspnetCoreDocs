@@ -6,6 +6,7 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 03/26/2020
+no-loc: [Blazor, "Identity", "Let's Encrypt", Razor, SignalR]
 uid: fundamentals/dependency-injection
 ---
 # Dependency injection in ASP.NET Core
@@ -190,7 +191,7 @@ Transient lifetime services (<xref:Microsoft.Extensions.DependencyInjection.Serv
 Scoped lifetime services (<xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddScoped*>) are created once per client request (connection).
 
 > [!WARNING]
-> When using a scoped service in a middleware, inject the service into the `Invoke` or `InvokeAsync` method. Don't inject via constructor injection because it forces the service to behave like a singleton. For more information, see <xref:fundamentals/middleware/write#per-request-middleware-dependencies>.
+> When using a scoped service in a middleware, inject the service into the `Invoke` or `InvokeAsync` method. Don't inject via [constructor injection](xref:mvc/controllers/dependency-injection#constructor-injection) because it forces the service to behave like a singleton. For more information, see <xref:fundamentals/middleware/write#per-request-middleware-dependencies>.
 
 ### Singleton
 
@@ -255,9 +256,9 @@ Services can be resolved by two mechanisms:
 
 Constructors can accept arguments that aren't provided by dependency injection, but the arguments must assign default values.
 
-When services are resolved by `IServiceProvider` or `ActivatorUtilities`, constructor injection requires a *public* constructor.
+When services are resolved by `IServiceProvider` or `ActivatorUtilities`, [constructor injection](xref:mvc/controllers/dependency-injection#constructor-injection) requires a *public* constructor.
 
-When services are resolved by `ActivatorUtilities`, constructor injection requires that only one applicable constructor exists. Constructor overloads are supported, but only one overload can exist whose arguments can all be fulfilled by dependency injection.
+When services are resolved by `ActivatorUtilities`, [constructor injection](xref:mvc/controllers/dependency-injection#constructor-injection) requires that only one applicable constructor exists. Constructor overloads are supported, but only one overload can exist whose arguments can all be fulfilled by dependency injection.
 
 ## Entity Framework contexts
 
@@ -534,6 +535,12 @@ Like all sets of recommendations, you may encounter situations where ignoring a 
 
 DI is an *alternative* to static/global object access patterns. You may not be able to realize the benefits of DI if you mix it with static object access.
 
+## Recommended patterns for multi-tenancy in DI
+
+[Orchard Core](https://github.com/OrchardCMS/OrchardCore) provides multi-tenancy. For more information, see the [Orchard Core Documentation](https://docs.orchardcore.net/en/dev/).
+
+See the samples apps at https://github.com/OrchardCMS/OrchardCore.Samples for examples of how to build modular and multi-tenant apps using just Orchard Core Framework without any of the CMS specific features.
+
 ## Additional resources
 
 * <xref:mvc/views/dependency-injection>
@@ -727,7 +734,7 @@ Transient lifetime services (<xref:Microsoft.Extensions.DependencyInjection.Serv
 Scoped lifetime services (<xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddScoped*>) are created once per client request (connection).
 
 > [!WARNING]
-> When using a scoped service in a middleware, inject the service into the `Invoke` or `InvokeAsync` method. Don't inject via constructor injection because it forces the service to behave like a singleton. For more information, see <xref:fundamentals/middleware/write#per-request-middleware-dependencies>.
+> When using a scoped service in a middleware, inject the service into the `Invoke` or `InvokeAsync` method. Don't inject via [constructor injection](xref:mvc/controllers/dependency-injection#constructor-injection) because it forces the service to behave like a singleton. For more information, see <xref:fundamentals/middleware/write#per-request-middleware-dependencies>.
 
 ### Singleton
 
@@ -792,9 +799,9 @@ Services can be resolved by two mechanisms:
 
 Constructors can accept arguments that aren't provided by dependency injection, but the arguments must assign default values.
 
-When services are resolved by `IServiceProvider` or `ActivatorUtilities`, constructor injection requires a *public* constructor.
+When services are resolved by `IServiceProvider` or `ActivatorUtilities`, [constructor injection](xref:mvc/controllers/dependency-injection#constructor-injection) requires a *public* constructor.
 
-When services are resolved by `ActivatorUtilities`, constructor injection requires that only one applicable constructor exists. Constructor overloads are supported, but only one overload can exist whose arguments can all be fulfilled by dependency injection.
+When services are resolved by `ActivatorUtilities`, [constructor injection](xref:mvc/controllers/dependency-injection#constructor-injection) requires that only one applicable constructor exists. Constructor overloads are supported, but only one overload can exist whose arguments can all be fulfilled by dependency injection.
 
 ## Entity Framework contexts
 

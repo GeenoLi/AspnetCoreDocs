@@ -5,8 +5,8 @@ description: Learn how to make Razor components accessible to users in multiple 
 monikerRange: '>= aspnetcore-3.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/07/2020
-no-loc: [Blazor, SignalR]
+ms.date: 04/14/2020
+no-loc: [Blazor, "Identity", "Let's Encrypt", Razor, SignalR]
 uid: blazor/globalization-localization
 ---
 # ASP.NET Core Blazor globalization and localization

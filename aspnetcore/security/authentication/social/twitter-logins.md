@@ -6,6 +6,7 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 03/19/2020
 monikerRange: '>= aspnetcore-3.0'
+no-loc: [Blazor, "Identity", "Let's Encrypt", Razor, SignalR]
 uid: security/authentication/twitter-logins
 ---
 # Twitter external sign-in setup with ASP.NET Core
@@ -72,6 +73,12 @@ After entering your Twitter credentials, you are redirected back to the web site
 You are now logged in using your Twitter credentials:
 
 [!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]
+
+<!-- 
+### React to cancel Authorize External sign-in
+Twitter doesn't support AccessDeniedPath
+Rather in the twitter setup, you can provide an External sign-in homepage. The external sign-in homepage doesn't support localhost. Tested with https://cors3.azurewebsites.net/ and that works.
+-->
 
 ## Troubleshooting
 

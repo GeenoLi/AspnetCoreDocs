@@ -5,6 +5,7 @@ description: Learn how to use the published .NET Core Docker images from the Doc
 ms.author: riande
 ms.custom: mvc
 ms.date: 01/15/2020
+no-loc: [Blazor, "Identity", "Let's Encrypt", Razor, SignalR]
 uid: host-and-deploy/docker/building-net-docker-images
 ---
 
@@ -257,7 +258,8 @@ ENTRYPOINT ["dotnet", "aspnetapp.dll"]
 * [ASP.NET Core Docker sample](https://github.com/dotnet/dotnet-docker) (The one used in this tutorial.)
 * [Configure ASP.NET Core to work with proxy servers and load balancers](/aspnet/core/host-and-deploy/proxy-load-balancer)
 * [Working with Visual Studio Docker Tools](https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker)
-* [Debugging with Visual Studio Code](https://code.visualstudio.com/docs/nodejs/debugging-recipes#_debug-nodejs-in-docker-containers) 
+* [Debugging with Visual Studio Code](https://code.visualstudio.com/docs/nodejs/debugging-recipes#_debug-nodejs-in-docker-containers)
+* [GC using Docker and small containers](xref:performance/memory#sc)
 
 ## Next steps
 
